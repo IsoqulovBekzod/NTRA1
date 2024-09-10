@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'nt/rentapp',
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
-        'reference' => '7cffa829f010719771c0e7e5f7d3c14a4e50766c',
+        'pretty_version' => 'dev-masster',
+        'version' => 'dev-masster',
+        'reference' => '25f419fbf5aec438329c653e9155618aff7f7537',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'nt/rentapp' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '7cffa829f010719771c0e7e5f7d3c14a4e50766c',
+            'pretty_version' => 'dev-masster',
+            'version' => 'dev-masster',
+            'reference' => '25f419fbf5aec438329c653e9155618aff7f7537',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

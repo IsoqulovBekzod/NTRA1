@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\middlewares\Authentication;
+
 class Router
 {
     protected object|null $updates;
@@ -13,7 +15,7 @@ class Router
         $this->updates = json_decode(file_get_contents('php://input'));
     }
 
-    public function getResourceName()
+    public function getResourceName(): string
     {
         $uri  = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $path = explode('/', $uri);
@@ -41,7 +43,7 @@ class Router
         return $this->updates;
     }
 
-    public static function get($path, $callback): void
+    public static function get($path, $callback, string|null $middleware = null): void
     {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             if ((new self())->getResourceId()) {
@@ -52,6 +54,7 @@ class Router
                 }
             }
             if ($path === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) {
+                (new Authentication())->handle($middleware);
                 $callback();
                 exit();
             }
@@ -60,11 +63,54 @@ class Router
 
     public static function post($path, $callback): void
     {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST'
+            && $_SERVER['REQUEST_URI'] === $path
+
+        ) {
+            $callback();
+            exit();
+        }
+    }
+
+
+    public static function patch($path, $callback): void
+    {
+        $isPatch = strtolower($_REQUEST['_method']) === 'patch';
+
+        if (!$isPatch) {
+            return;
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_SERVER['REQUEST_URI'] === $path) {
             $callback();
             exit();
         }
     }
+
+    public static function delete(string $path, $callback): void
+    {
+        $method = $_REQUEST['_method'] ?? '';
+
+        if (strtolower($method) !== 'delete') {
+            return;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $resourceId = (new self())->getResourceId();
+
+            if ($resourceId) {
+                $path = str_replace('{id}', (string)$resourceId, $path);
+                if ($path === parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) {
+                    $callback($resourceId);
+                    exit();
+                }
+            }
+            $callback();
+            exit();
+        }
+    }
+
+
 
     public static function errorResponse(int $code, $message = 'Error bad request'): void
     {

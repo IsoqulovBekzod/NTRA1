@@ -8,13 +8,12 @@ use PDO;
 
 class User
 {
-    private \PDO $pdo;
+    private PDO $pdo;
 
     public function __construct()
     {
         $this->pdo = DB::connect();
     }
-
 
     public function createUser(
         string $username,
@@ -43,21 +42,15 @@ class User
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function login(string $email,string $password): bool
+    public function getByUsername(string $username, string $password)
     {
 
-        $query = "SELECT * FROM users WHERE email = :email AND password = :password";
-        $stmt  = $this->pdo->prepare($query);
-        $stmt->bindParam(':email', $email);
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
+        $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $password);
-        if ($stmt->execute()) {
+        $stmt->execute();
 
-            $user = $stmt->fetch(\PDO::FETCH_ASSOC);
-            return $user !== false;
-        } else {
-
-            return false;
-        }
+        return $stmt->fetch();
     }
 
     public function updateUser(
