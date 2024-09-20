@@ -1,224 +1,146 @@
-<!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth" dir="ltr">
-<head>
-    <meta charset="UTF-8" />
-    <title>NTRA - Super-puper rent app!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta content="Real Estate Website Landing Page" name="description" />
-    <meta content="Real Estate, buy, sell, Rent, tailwind Css" name="keywords" />
-    <meta name="author" content="Shreethemes" />
-    <meta name="website" content="https://shreethemes.in" />
-    <meta name="email" content="support@shreethemes.in" />
-    <meta name="version" content="2.2.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<x-layouts.main>
+    <!-- Hero Start -->
+    <section class="relative mt-20">
+        <div class="container-fluid md:mx-4 mx-2">
+            <div class="relative pt-40 pb-52 table w-full rounded-2xl shadow-md overflow-hidden" id="home">
+                <div class="absolute inset-0 bg-black/60"></div>
 
-    <!-- Css -->
-    <link href="/assets/libs/tiny-slider/tiny-slider.css" rel="stylesheet">
-    <link href="/assets/libs/tobii/css/tobii.min.css" rel="stylesheet">
-    <link href="/assets/libs/choices.js/public/assets/styles/choices.min.css" rel="stylesheet">
-    <link href="/assets/libs/swiper/css/swiper.min.css" rel="stylesheet">
-    <!-- Main Css -->
-    <link href="/assets/libs/@iconscout/unicons/css/line.css" type="text/css" rel="stylesheet" />
-    <link href="/assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="/assets/css/tailwind.css" />
+                <div class="container relative">
+                    <div class="grid grid-cols-1">
+                        <div class="md:text-start text-center">
+                            <h1 class="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl mb-6">We will help you find <br> your <span class="text-green-600">Wonderful</span> home</h1>
+                            <p class="text-white/70 text-xl max-w-xl">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+                        </div>
+                    </div><!--end grid-->
+                </div><!--end container-->
+            </div>
+        </div><!--end Container-->
+    </section><!--end section-->
+    <!-- Hero End -->
 
-</head>
+    <!-- Start -->
+    <section class="relative md:pb-24 pb-16">
+        <div class="container relative">
+            <div class="grid grid-cols-1 justify-center">
+                <div class="relative -mt-32">
+                    <div class="grid grid-cols-1">
 
-<body class="dark:bg-slate-900">
+                        <div id="StarterContent" class="p-6 bg-white dark:bg-slate-900 rounded-ss-none rounded-se-none md:rounded-se-xl rounded-xl shadow-md dark:shadow-gray-700">
+                            <div class="" id="buy-home" role="tabpanel" aria-labelledby="buy-home-tab">
+                                <form action="/search" method="get">
+                                    <div class="registration-form text-dark text-start">
+                                        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-0 gap-6">
 
-<div class="container relative flex justify-between items-center">
-    <!-- Start Logo container -->
-    <a class="logo" href="index.html">
-            <span class="inline-block dark:hidden">
-                <img src="assets/images/logo-dark.png" class="l-dark" height="24" alt="Logo Dark">
-                <img src="assets/images/logo-light.png" class="l-light" height="24" alt="Logo Light">
-            </span>
-        <img src="assets/images/logo-light.png" height="24" class="hidden dark:inline-block" alt="Logo Light">
-    </a>
-    <!-- End Logo container -->
+                                            <div>
 
-    <!-- Start Mobile Toggle -->
-    <div class="menu-extras lg:hidden">
-        <div class="menu-item">
-            <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-                <div class="lines">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                                                <label class="form-label font-medium text-slate-900 dark:text-white">Search : <span class="text-red-600">*</span></label>
+                                                <div class="filter-search-form relative filter-border mt-2">
+                                                    <i class="uil uil-search icons"></i>
+                                                    <input name="search_phrase" type="text" id="job-keyword" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Search your keaywords">
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label for="buy-properties" class="form-label font-medium text-slate-900 dark:text-white">Select Categories:</label>
+                                                <div class="filter-search-form relative filter-border mt-2">
+                                                    <i class="uil uil-estate icons"></i>
+                                                    <select class="form-select z-2" data-trigger name="branch_id" id="choices-catagory-buy" aria-label="Default select example">
+                                                        <option value="">Filial</option>
+                                                        @foreach ($branches as $branch) :
+                                                        <option value={{$branch->id}}>{{ $branch->name }}</option>
+                                                        @endforeach;
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div>
+                                                <label for="buy-min-price" class="form-label font-medium text-slate-900 dark:text-white">Min Price :</label>
+                                                <div class="filter-search-form relative filter-border mt-2">
+                                                    <i class="uil uil-usd-circle icons"></i>
+                                                    <input name="min_price" type="text" id="job-keyword" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Min Price">
+
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label for="buy-max-price" class="form-label font-medium text-slate-900 dark:text-white">Max Price :</label>
+                                                <div class="filter-search-form relative mt-2">
+                                                    <i class="uil uil-usd-circle icons"></i>
+                                                    <input type="text" name="max_price" id="job-keyword" class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" placeholder="Max Price">
+
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:mt-6">
+                                                <input type="submit" id="search-buy" name="search" class="btn bg-green-600 hover:bg-green-700 border-green-600 hover:border-green-700 text-white searchbtn submit-btn w-full !h-12 rounded" value="Search">
+                                            </div>
+                                        </div><!--end grid-->
+                                    </div><!--end container-->
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                    </div><!--end grid-->
                 </div>
-            </a>
-        </div>
-    </div>
-    <!-- End Mobile Toggle -->
+            </div><!--end grid-->
+        </div><!--end container-->
+        <div class="container relative mt-12" >
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[30px]">
 
-    <!-- Navigation & Buttons -->
-    <div class="hidden lg:flex justify-between items-center w-full">
-        <!-- Start Navigation Menu -->
-        <ul class="navigation-menu list-none flex items-center mb-0 space-x-4">
 
-            <li>
-                <a href="/branches" class="text-gray-700 dark:text-white hover:text-green-600 transition">Branches</a>
-            </li>
-        </ul>
-        <ul class="navigation-menu list-none flex items-center mb-0 space-x-4">
 
-            <li>
-                <a href="/" class="text-gray-700 dark:text-white hover:text-green-600 transition">Home</a>
-            </li>
-        </ul>
-        <!-- End Navigation Menu -->
+                @foreach ($ads as $ad):
 
-        <!-- Login Button Start -->
-        <ul class="buy-button list-none mb-0 flex items-center space-x-2">
-            <li>
-                    <i data-feather="user" class="size-4 stroke-[3]"></i>
-                </a>
-            </li>
-            <li class="sm:inline ps-1 mb-0 hidden">
-                <a href="/register"
-                   class="btn bg-green-600 hover:bg-green-700 border-green-600 dark:border-green-600 text-white rounded-full">Signup</a>
-            </li>
+                <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
+                    <div class="relative">
+                        <img src="assets/images/ads/public/assets/images/ads/66e04d227d90c___download (1).jpeg" alt="">
 
-        </ul>
-        <!-- Login Button End -->
-    </div>
-</div><!-- end container -->
-</nav><!-- end header -->
-<!-- Start Footer -->
-<footer class="relative bg-slate-900 dark:bg-slate-800 mt-24">
-    <div class="container relative">
-        <div class="grid grid-cols-1">
-            <div class="relative py-16">
-                <!-- Subscribe -->
-                <div class="relative w-full">
-                    <div class="relative -top-40 bg-white dark:bg-slate-900 lg:px-8 px-6 py-10 rounded-xl shadow-lg dark:shadow-gray-700 overflow-hidden">
-                        <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
-                            <div class="md:text-start text-center z-1">
-                                <h3 class="md:text-3xl text-2xl md:leading-normal leading-normal font-medium text-black dark:text-white">Subscribe to Newsletter!</h3>
-                                <p class="text-slate-400 max-w-xl mx-auto">Subscribe to get latest updates and information.</p>
-                            </div>
-
-                            <div class="subcribe-form z-1">
-                                <form class="relative max-w-lg md:ms-auto">
-                                    <input type="email" id="subcribe" name="email" class="rounded-full bg-white dark:bg-slate-900 shadow dark:shadow-gray-700" placeholder="Enter your email :">
-                                    <button type="submit" class="btn bg-green-600 hover:bg-green-700 text-white rounded-full">Subscribe</button>
-                                </form><!--end form-->
-                            </div>
-                        </div>
-
-                        <div class="absolute -top-5 -start-5">
-                            <div class="uil uil-envelope lg:text-[150px] text-7xl text-black/5 dark:text-white/5 ltr:-rotate-45 rtl:rotate-45"></div>
-                        </div>
-
-                        <div class="absolute -bottom-5 -end-5">
-                            <div class="uil uil-pen lg:text-[150px] text-7xl text-black/5 dark:text-white/5 rtl:-rotate-90"></div>
+                        <div class="absolute top-4 end-4">
+                            <a href="javascript:void(0)" class="btn btn-icon bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-full text-slate-100 dark:text-slate-700 focus:text-red-600 dark:focus:text-red-600 hover:text-red-600 dark:hover:text-red-600"><i class="mdi mdi-heart text-[20px]"></i></a>
                         </div>
                     </div>
 
-                    <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px] -mt-24">
-                        <div class="lg:col-span-4 md:col-span-12">
-                            <a href="#" class="text-[22px] focus:outline-none">
-                                <img src="../assets/images/logo-light.png" alt="">
-                            </a>
-                            <p class="mt-6 text-gray-300">A great plateform to buy, sell and rent your properties without any agent or commisions.</p>
+                    <div class="p-6">
+                        <div class="pb-6">
+                            <a href="/ads/{{ $ad->id }}" class="text-lg hover:text-green-600 font-medium ease-in-out duration-500">{{ $ad->title }}</a>
+                        </div>
 
-                        </div><!--end col-->
-
-                        <div class="lg:col-span-2 md:col-span-4">
-                            <h5 class="tracking-[1px] text-gray-100 font-semibold">Company</h5>
-                            <ul class="list-none footer-list mt-6">
-                                <li><a href="aboutus.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> About us</a></li>
-                                <li class="mt-[10px]"><a href="features.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Services</a></li>
-                                <li class="mt-[10px]"><a href="pricing.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Pricing</a></li>
-                                <li class="mt-[10px]"><a href="blog.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Blog</a></li>
-                                <li class="mt-[10px]"><a href="auth-login.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Login</a></li>
-                            </ul>
-                        </div><!--end col-->
-
-                        <div class="lg:col-span-3 md:col-span-4">
-                            <h5 class="tracking-[1px] text-gray-100 font-semibold">Usefull Links</h5>
-                            <ul class="list-none footer-list mt-6">
-                                <li><a href="terms.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Terms of Services</a></li>
-                                <li class="mt-[10px]"><a href="privacy.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Privacy Policy</a></li>
-                                <li class="mt-[10px]"><a href="listing-one.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Listing</a></li>
-                                <li class="mt-[10px]"><a href="contact.html" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out"><i class="uil uil-angle-right-b me-1"></i> Contact</a></li>
-                            </ul>
-                        </div><!--end col-->
-
-                        <div class="lg:col-span-3 md:col-span-4">
-                            <h5 class="tracking-[1px] text-gray-100 font-semibold">Contact Details</h5>
+                        <ul class="py-6 border-y border-slate-100 dark:border-gray-800 flex items-center list-none">
+                            <li class="flex items-center me-4">
+                                <span>{{ $ad->description }} </span>
+                            </li>
 
 
-                            <div class="flex mt-6">
-                                <i data-feather="map-pin" class="size-5 text-green-600 me-3"></i>
-                                <div class="">
-                                    <h6 class="text-gray-300 mb-2">O'zbekiston,Toshkent, <br>chilonzor, <br> 19-kv 10-xonodon</h6>
-                                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin" data-type="iframe" class="text-green-600 hover:text-green-700 duration-500 ease-in-out lightbox">View on Google map</a>
-                                </div>
-                            </div>
 
-                            <div class="flex mt-6">
-                                <i data-feather="mail" class="size-5 text-green-600 me-3"></i>
-                                <div class="">
-                                    <a href="mailto:contact@example.com" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out">isoqulovbekzod6@gmail.com</a>
-                                </div>
-                            </div>
+                        </ul>
 
-                            <div class="flex mt-6">
-                                <i data-feather="phone" class="size-5 text-green-600 me-3"></i>
-                                <div class="">
-                                    <a href="tel:+99897 030 0956" class="text-slate-300 hover:text-slate-400 duration-500 ease-in-out">+99897 030 0956</a>
-                                </div>
-                            </div>
-                        </div><!--end col-->
-                    </div><!--end grid-->
-                </div>
-                <!-- Subscribe -->
-            </div>
-        </div>
-    </div><!--end container-->
-
-    <div class="py-[30px] px-0 border-t border-gray-800 dark:border-gray-700">
-        <div class="container relative text-center">
-            <div class="grid md:grid-cols-2 items-center gap-6">
-                <div class="md:text-start text-center">
-                    <p class="mb-0 text-gray-300">© <script>document.write(new Date().getFullYear())</script> Hously. Design with <i class="mdi mdi-heart text-red-600"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
-                </div>
-
-                <ul class="list-none md:text-end text-center">
-                    <li class="inline"><a href="https://1.envato.market/hously" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="shopping-cart" class="size-4"></i></a></li>
-                    <li class="inline"><a href="https://dribbble.com/shreethemes" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="dribbble" class="size-4"></i></a></li>
-                    <li class="inline"><a href="https://www.behance.net/shreethemes" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i class="uil uil-behance align-baseline"></i></a></li>
-                    <li class="inline"><a href="http://linkedin.com/company/shreethemes" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="linkedin" class="size-4"></i></a></li>
-                    <li class="inline"><a href="https://www.facebook.com/shreethemes" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="facebook" class="size-4"></i></a></li>
-                    <li class="inline"><a href="https://www.instagram.com/shreethemes/" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="instagram" class="size-4"></i></a></li>
-                    <li class="inline"><a href="https://twitter.com/shreethemes" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="twitter" class="size-4"></i></a></li>
-                    <li class="inline"><a href="mailto:support@shreethemes.in" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="mail" class="size-4"></i></a></li>
-                    <li class="inline"><a href="https://forms.gle/QkTueCikDGqJnbky9" target="_blank" class="btn btn-icon btn-sm text-gray-400 hover:text-white border border-gray-800 dark:border-gray-700 rounded-md hover:border-green-600 dark:hover:border-green-600 hover:bg-green-600 dark:hover:bg-green-600"><i data-feather="file-text" class="size-4"></i></a></li>
-                </ul><!--end icon-->
-            </div><!--end grid-->
-        </div><!--end container-->
-    </div>
-</footer><!--end footer-->
-<!-- End Footer -->
+                        <ul class="py-6 border-y border-slate-100 dark:border-gray-800 flex items-center list-none">
+                            <li class="flex items-center me-4">
+                                <i class="uil uil-users-alt icons text-2xl me-2 text-green-600"></i>
+                                {{-- <span>{{ $ad->description }} </span> --}}
+                            </li>
 
 
-<!-- Back to top -->
-<a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fixed hidden text-lg rounded-full z-10 bottom-5 end-5 size-9 text-center bg-green-600 text-white justify-center items-center"><i class="uil uil-arrow-up"></i></a>
-<!-- Back to top -->
 
-<!-- JAVASCRIPTS -->
-<script src="../assets/libs/tiny-slider/min/tiny-slider.js"></script>
-<script src="../assets/libs/tobii/js/tobii.min.js"></script>
-<script src="../assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
-<script src="../assets/libs/swiper/js/swiper.min.js"></script>
-<script src="../assets/libs/feather-icons/feather.min.js"></script>
-<script src="../assets/js/plugins.init.js"></script>
-<script src="../assets/js/app.js"></script>
+                        </ul>
+                        <ul class="pt-6 flex justify-between items-center list-none">
+                            <li>
+                                <span class="text-slate-400">Price</span>
+                                <p class="text-lg font-medium">{{ $ad->price }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--end property content-->
 
-<!-- JAVASCRIPTS -->
-</body>
-</html>
+                @endforeach;
+
+            </div><!--end container-->
+    </section><!--end section-->
+</x-layouts.main>
+
