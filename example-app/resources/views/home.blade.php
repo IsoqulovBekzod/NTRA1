@@ -42,14 +42,15 @@
                                             </div>
 
                                             <div>
-                                                <label for="buy-properties" class="form-label font-medium text-slate-900 dark:text-white">Select Categories:</label>
+
+                                                <label for="buy-properties" class="form-label font-medium text-slate-900 dark:text-white">Filial:</label>
                                                 <div class="filter-search-form relative filter-border mt-2">
                                                     <i class="uil uil-estate icons"></i>
-                                                    <select class="form-select z-2" data-trigger name="branch_id" id="choices-catagory-buy" aria-label="Default select example">
-                                                        <option value="">Filial</option>
-                                                        @foreach ($branches as $branch) :
-                                                        <option value={{$branch->id}}>{{ $branch->name }}</option>
-                                                        @endforeach;
+                                                    <select class="form-input filter-input-box bg-gray-50 dark:bg-slate-800 border-0" data-trigger name="branch_id" id="choices-category-buy" aria-label="Default  example">
+                                                        <option value="" disabled selected>Filial tanlang</option>
+                                                        @foreach ($branches as $branch)
+                                                            <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                                                        @endforeach
 
                                                     </select>
                                                 </div>
@@ -95,7 +96,7 @@
 
 
 
-                @foreach ($ads as $ad):
+                @foreach ($ads as $ad)
 
                 <div class="group rounded-xl bg-white dark:bg-slate-900 shadow hover:shadow-xl dark:hover:shadow-xl dark:shadow-gray-700 dark:hover:shadow-gray-700 overflow-hidden ease-in-out duration-500">
                     <div class="relative">
@@ -138,9 +139,8 @@
                     </div>
                 </div><!--end property content-->
 
-                @endforeach;
+                @endforeach
 
             </div><!--end container-->
     </section><!--end section-->
 </x-layouts.main>
-

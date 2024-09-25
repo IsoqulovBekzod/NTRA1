@@ -35,7 +35,7 @@
                 </div>
 
                 <h4 class="text-2xl font-medium mt-6 mb-3">{{$ads->title}}</h4>
-                <span class="text-slate-400 flex items-center"><i data-feather="map-pin" class="size-5 me-2"></i><?= $ad->address;?></span>
+                <span class="text-slate-400 flex items-center"><i data-feather="map-pin" class="size-5 me-2"></i><?= $ads->address;?></span>
 
                 <ul class="py-6 flex items-center list-none">
                     <li class="flex items-center lg:me-6 me-4">
@@ -45,7 +45,7 @@
 
                     <li class="flex items-center lg:me-6 me-4">
                         <i class="uil uil-bed-double lg:text-3xl text-2xl me-2 text-green-600"></i>
-                        <span class="lg:text-xl"><?= $ad->rooms;?> xona</span>
+                        <span class="lg:text-xl"><?= $ads->rooms;?> xona</span>
                     </li>
 
                     <li class="flex items-center">
@@ -54,7 +54,7 @@
                     </li>
                 </ul>
 
-                <p class="text-slate-400"><?= $ad->description;?></p>
+                <p class="text-slate-400"><?= $ads->description;?></p>
 
                 <div class="w-full leading-[0] border-0 mt-6">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"
@@ -66,12 +66,12 @@
                 <div class="sticky top-20">
                     <div class="rounded-md bg-slate-50 dark:bg-slate-800 shadow dark:shadow-gray-700">
                         <div class="p-6">
-                            <h5 class="text-2xl font-medium">Narxi: <?= $ad->price;?></h5>
+                            <h5 class="text-2xl font-medium">Narxi: <?= $ads->price;?></h5>
 
                             <div class="flex justify-between items-center mt-4">
-                                <span class="text-xl font-medium">$ <?= $ad->price;?></span>
+                                <span class="text-xl font-medium">$ <?= $ads->price;?></span>
 
-                                <span class="bg-green-600/10 text-green-600 text-sm px-2.5 py-0.75 rounded h-6"><?= $ad->status_name;?></span>
+                                <span class="bg-green-600/10 text-green-600 text-sm px-2.5 py-0.75 rounded h-6"><?= $ads->status_name;?></span>
                             </div>
 
                             <ul class="list-none mt-4">
@@ -82,17 +82,17 @@
 
                                 <li class="flex justify-between items-center mt-2">
                                     <span class="text-slate-400 text-sm">Filial:</span>
-                                    <span class="font-medium text-sm"><?= $ad->branch;?></span>
+                                    <span class="font-medium text-sm"><?= $ads->branch;?></span>
                                 </li>
 
                                 <li class="flex justify-between items-center mt-2">
                                     <span class="text-slate-400 text-sm">User:</span>
-                                    <span class="font-medium text-sm"><?= $ad->user;?></span>
+                                    <span class="font-medium text-sm"><?= $ads->user;?></span>
                                 </li>
 
                                 <li class="flex justify-between items-center mt-2">
                                     <span class="text-slate-400 text-sm">Sana</span>
-                                    <span class="font-medium text-sm"><?= $ad->created_at;?></span>
+                                    <span class="font-medium text-sm"><?= $ads->created_at;?></span>
                                 </li>
                             </ul>
                         </div>

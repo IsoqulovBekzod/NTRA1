@@ -1,11 +1,22 @@
+
+import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
+
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: ["./src/**/*.{html,js}", "./node_modules/tw-elements/dist/js/**/*.js",
+    content: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+        "./src/**/*.{html,js}",
+        "./node_modules/tw-elements/dist/js/**/*.js",
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
-        "./resources/**/*.vue",],
+        "./resources/**/*.vue",
+    ],
     darkMode: 'class',
     important: true,
     theme: {
@@ -32,7 +43,6 @@ module.exports = {
         fontFamily: {
             'body': ['"League Spartan", sans-serif'],
         },
-
 
         extend: {
             screens: {
@@ -95,8 +105,9 @@ module.exports = {
     },
 
     plugins: [
+        forms,
         require("@tailwindcss/forms")({
             strategy: 'class', // only generate classes
         }),
     ],
-}
+};

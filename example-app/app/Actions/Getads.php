@@ -10,7 +10,7 @@ class Getads
     {
         $ads = Ad::all();
         $branches = Branch::all();
-        return view(('home'),['ads'=>$ads,'branches'=>$branches]);
+        return view('home',['ads'=>$ads,'branches'=>$branches]);
     }
 
 }
