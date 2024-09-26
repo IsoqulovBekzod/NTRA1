@@ -4,8 +4,158 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78da9780b641a03bd94c4490733cfa10",
+    "content-hash": "85fac40555cb9591d140d7711e19babf",
     "packages": [
+        {
+            "name": "blade-ui-kit/blade-heroicons",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blade-ui-kit/blade-heroicons.git",
+                "reference": "a7c377a4ef88cd54712e3e15cbed30446820da0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-heroicons/zipball/a7c377a4ef88cd54712e3e15cbed30446820da0b",
+                "reference": "a7c377a4ef88cd54712e3e15cbed30446820da0b",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.6",
+                "illuminate/support": "^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeUI\\Heroicons\\BladeHeroiconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeUI\\Heroicons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of Heroicons in your Laravel Blade views.",
+            "homepage": "https://github.com/blade-ui-kit/blade-heroicons",
+            "keywords": [
+                "Heroicons",
+                "blade",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/blade-ui-kit/blade-heroicons/issues",
+                "source": "https://github.com/blade-ui-kit/blade-heroicons/tree/2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/driesvints",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.paypal.com/paypalme/driesvints",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2024-07-16T07:00:01+00:00"
+        },
+        {
+            "name": "blade-ui-kit/blade-icons",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blade-ui-kit/blade-icons.git",
+                "reference": "8f787baf09d88cdfd6ec4dbaba11ebfa885f0595"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-icons/zipball/8f787baf09d88cdfd6ec4dbaba11ebfa885f0595",
+                "reference": "8f787baf09d88cdfd6ec4dbaba11ebfa885f0595",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/filesystem": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/view": "^8.0|^9.0|^10.0|^11.0",
+                "php": "^7.4|^8.0",
+                "symfony/console": "^5.3|^6.0|^7.0",
+                "symfony/finder": "^5.3|^6.0|^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5.1",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0"
+            },
+            "bin": [
+                "bin/blade-icons-generate"
+            ],
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeUI\\Icons\\BladeIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "BladeUI\\Icons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of icons in your Laravel Blade views.",
+            "homepage": "https://github.com/blade-ui-kit/blade-icons",
+            "keywords": [
+                "blade",
+                "icons",
+                "laravel",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/blade-ui-kit/blade-icons/issues",
+                "source": "https://github.com/blade-ui-kit/blade-icons"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/driesvints",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.paypal.com/paypalme/driesvints",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2024-08-14T14:25:11+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
@@ -1820,6 +1970,52 @@
             "time": "2024-01-28T23:22:08+00:00"
         },
         {
+            "name": "lee-to/laravel-package-command",
+            "version": "0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lee-to/laravel-package-command.git",
+                "reference": "18c398032bc92b52ebe1374521c6e1e8393ab9e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lee-to/laravel-package-command/zipball/18c398032bc92b52ebe1374521c6e1e8393ab9e4",
+                "reference": "18c398032bc92b52ebe1374521c6e1e8393ab9e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0|^8.1|^8.2"
+            },
+            "require-dev": {
+                "fakerphp/faker": "^1.9.2",
+                "mockery/mockery": "^1.4.4",
+                "phpunit/phpunit": "^9.5.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Leeto\\PackageCommand\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Danil Shutsky",
+                    "email": "info@cutcode.ru",
+                    "homepage": "https://github.com/lee-to"
+                }
+            ],
+            "description": "Package development command",
+            "support": {
+                "issues": "https://github.com/lee-to/laravel-package-command/issues",
+                "source": "https://github.com/lee-to/laravel-package-command/tree/0.9.1"
+            },
+            "time": "2023-01-31T10:29:24+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "3.7.0",
             "source": {
@@ -1919,6 +2115,95 @@
                 }
             ],
             "time": "2024-06-28T09:40:51+00:00"
+        },
+        {
+            "name": "moonshine/moonshine",
+            "version": "2.22.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moonshine-software/moonshine.git",
+                "reference": "5636a63d1cad4478e3f12a0c89ca2c8c85212f57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moonshine-software/moonshine/zipball/5636a63d1cad4478e3f12a0c89ca2c8c85212f57",
+                "reference": "5636a63d1cad4478e3f12a0c89ca2c8c85212f57",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "lee-to/laravel-package-command": "^0.9",
+                "php": "^8.1|^8.2|^8.3",
+                "rap2hpoutre/fast-excel": "^5.4"
+            },
+            "conflict": {
+                "laravel/framework": "<10.20.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "nunomaduro/larastan": "^2.9",
+                "orchestra/testbench": "^8.0|^9.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-laravel": "^2.2",
+                "pestphp/pest-plugin-mock": "^2.0",
+                "rector/rector": "^1.0"
+            },
+            "suggest": {
+                "laravel/socialite": "Required to use the Socialite",
+                "unisharp/laravel-filemanager": "Required if you want tinymce file manager"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MoonShine\\Providers\\MoonShineServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "MoonShine\\": "src/",
+                    "MoonShine\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Danil Shutsky",
+                    "email": "info@cutcode.ru",
+                    "homepage": "https://cutcode.dev"
+                }
+            ],
+            "description": "Laravel administration panel",
+            "homepage": "https://moonshine-laravel.com",
+            "keywords": [
+                "admin",
+                "dashboard",
+                "laravel",
+                "moonshine"
+            ],
+            "support": {
+                "issues": "https://github.com/moonshine-software/moonshine/issues",
+                "source": "https://github.com/moonshine-software/moonshine"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/moonshine-software",
+                    "type": "github"
+                },
+                {
+                    "url": "https://opencollective.com/moonshine",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2024-09-23T06:34:50+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -2319,6 +2604,99 @@
                 }
             ],
             "time": "2024-09-05T15:25:50+00:00"
+        },
+        {
+            "name": "openspout/openspout",
+            "version": "v4.26.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/openspout/openspout.git",
+                "reference": "a49b947c0c109f4fd112f9b5c6d6cb3e6baf8b50"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/a49b947c0c109f4fd112f9b5c6d6cb3e6baf8b50",
+                "reference": "a49b947c0c109f4fd112f9b5c6d6cb3e6baf8b50",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-filter": "*",
+                "ext-libxml": "*",
+                "ext-xmlreader": "*",
+                "ext-zip": "*",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0"
+            },
+            "require-dev": {
+                "ext-zlib": "*",
+                "friendsofphp/php-cs-fixer": "^3.64.0",
+                "infection/infection": "^0.29.6",
+                "phpbench/phpbench": "^1.3.1",
+                "phpstan/phpstan": "^1.12.4",
+                "phpstan/phpstan-phpunit": "^1.4.0",
+                "phpstan/phpstan-strict-rules": "^1.6.1",
+                "phpunit/phpunit": "^11.3.6"
+            },
+            "suggest": {
+                "ext-iconv": "To handle non UTF-8 CSV files (if \"php-mbstring\" is not already installed or is too limited)",
+                "ext-mbstring": "To handle non UTF-8 CSV files (if \"iconv\" is not already installed)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "OpenSpout\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrien Loison",
+                    "email": "adrien@box.com"
+                }
+            ],
+            "description": "PHP Library to read and write spreadsheet files (CSV, XLSX and ODS), in a fast and scalable way",
+            "homepage": "https://github.com/openspout/openspout",
+            "keywords": [
+                "OOXML",
+                "csv",
+                "excel",
+                "memory",
+                "odf",
+                "ods",
+                "office",
+                "open",
+                "php",
+                "read",
+                "scale",
+                "spreadsheet",
+                "stream",
+                "write",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/openspout/openspout/issues",
+                "source": "https://github.com/openspout/openspout/tree/v4.26.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/filippotessarotto",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Slamdunk",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-09-24T14:04:43+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -3110,6 +3488,76 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "rap2hpoutre/fast-excel",
+            "version": "v5.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rap2hpoutre/fast-excel.git",
+                "reference": "83604f2a16fbb0374747299173abe691b24916da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rap2hpoutre/fast-excel/zipball/83604f2a16fbb0374747299173abe691b24916da",
+                "reference": "83604f2a16fbb0374747299173abe691b24916da",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "openspout/openspout": "^4.24",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "illuminate/database": "^6.20.12 || ^7.30.4 || ^8.24.0 || ^9.0 || ^10.0 || ^11.0",
+                "phpunit/phpunit": "^9.5 || ^10.1",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rap2hpoutre\\FastExcel\\Providers\\FastExcelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions/fastexcel.php"
+                ],
+                "psr-4": {
+                    "Rap2hpoutre\\FastExcel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rap2h",
+                    "email": "raphaelht@gmail.com"
+                }
+            ],
+            "description": "Fast Excel import/export for Laravel",
+            "keywords": [
+                "csv",
+                "excel",
+                "laravel",
+                "xls",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/rap2hpoutre/fast-excel/issues",
+                "source": "https://github.com/rap2hpoutre/fast-excel/tree/v5.5.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/rap2hpoutre",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-03T08:00:43+00:00"
         },
         {
             "name": "symfony/clock",
@@ -5610,16 +6058,16 @@
     "packages-dev": [
         {
             "name": "brianium/paratest",
-            "version": "v7.5.5",
+            "version": "v7.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paratestphp/paratest.git",
-                "reference": "f29c7d671afc5c4e1140bd7b9f2749e827902a1e"
+                "reference": "c490591cc9c2f4830633b905547d30d5eb609c88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paratestphp/paratest/zipball/f29c7d671afc5c4e1140bd7b9f2749e827902a1e",
-                "reference": "f29c7d671afc5c4e1140bd7b9f2749e827902a1e",
+                "url": "https://api.github.com/repos/paratestphp/paratest/zipball/c490591cc9c2f4830633b905547d30d5eb609c88",
+                "reference": "c490591cc9c2f4830633b905547d30d5eb609c88",
                 "shasum": ""
             },
             "require": {
@@ -5633,7 +6081,7 @@
                 "phpunit/php-code-coverage": "^11.0.6",
                 "phpunit/php-file-iterator": "^5.1.0",
                 "phpunit/php-timer": "^7.0.1",
-                "phpunit/phpunit": "^11.3.6",
+                "phpunit/phpunit": "^11.3.3",
                 "sebastian/environment": "^7.2.0",
                 "symfony/console": "^6.4.11 || ^7.1.4",
                 "symfony/process": "^6.4.8 || ^7.1.3"
@@ -5643,11 +6091,11 @@
                 "ext-pcov": "*",
                 "ext-posix": "*",
                 "infection/infection": "^0.29.6",
-                "phpstan/phpstan": "^1.12.4",
-                "phpstan/phpstan-deprecation-rules": "^1.2.1",
+                "phpstan/phpstan": "^1.12.1",
+                "phpstan/phpstan-deprecation-rules": "^1.2.0",
                 "phpstan/phpstan-phpunit": "^1.4.0",
                 "phpstan/phpstan-strict-rules": "^1.6.0",
-                "squizlabs/php_codesniffer": "^3.10.3",
+                "squizlabs/php_codesniffer": "^3.10.2",
                 "symfony/filesystem": "^6.4.9 || ^7.1.2"
             },
             "bin": [
@@ -5688,7 +6136,7 @@
             ],
             "support": {
                 "issues": "https://github.com/paratestphp/paratest/issues",
-                "source": "https://github.com/paratestphp/paratest/tree/v7.5.5"
+                "source": "https://github.com/paratestphp/paratest/tree/v7.5.4"
             },
             "funding": [
                 {
@@ -5700,7 +6148,7 @@
                     "type": "paypal"
                 }
             ],
-            "time": "2024-09-20T12:57:46+00:00"
+            "time": "2024-09-04T21:15:27+00:00"
         },
         {
             "name": "doctrine/deprecations",
