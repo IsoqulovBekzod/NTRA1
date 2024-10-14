@@ -1,42 +1,24 @@
 <?php
 
-declare(strict_types=1);
+use App\Http\Controllers\AdController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
 
-use App\Router;
-use Controllers\AdController;
+Route::get('/', [AdController::class, 'index'])->name('home');
 
-Router::get('/', fn() => (new AdController())->home());
+Route::resource('ads', AdController::class);
+Route::post('/ads/{id}/bookmark', [UserController::class, 'toggleBookmark']);
 
-Router::get('/ads/{id}', fn(int $id) => (new AdController())->show($id));
-Router::get('/ads/create', fn() => loadView('dashboard/create-ad'));
-Router::post('/ads/create', fn() => (new AdController())->create());
 
-Router::get('/ads/update/{id}', fn(int $id) => (new AdController())->update($id));
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Statuses
-Router::get('/status/create', fn() => loadView('dashboard/create-status'));
-Router::post('/status/create', fn() => loadController('createStatus'));
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Router::get('/login',  fn() => loadView('auth/login'), 'guest');
-Router::post('/login', fn() => (new \Controllers\BranchController())->login());
-
-Router::get('/admin', fn() => loadView('dashboard/home'), 'auth');
-Router::get('/profile', fn() => (new \Controllers\UserController())->loadProfile(), 'auth');
-
-Router::delete('/ads/delete/{id}', fn(int $id)=>(new AdController())->delete($id));
-
-Router::get('/admin/branches', fn() => loadView('dashboard/branches'), 'auth');
-Router::get('/admin/ads', fn() => loadView('dashboard/ads'), 'auth');
-
-Router::get('/search', fn() => (new AdController())->search());
-
-Router::errorResponse(404, 'Not Found');
-
-/**
- * Delete ad:
- * Requirements: ad_id
- *
- * Delete:
- * 1. From ads_image table
- * 2.
- */
+require __DIR__.'/auth.php';
